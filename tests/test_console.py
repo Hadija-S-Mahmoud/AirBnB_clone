@@ -44,7 +44,7 @@ class TestHBNBCommand_help(unittest.TestCase):
 
     def test_help_create(self):
         h = ("Usage: create <class>\n        "
-             "Creating new class instance and print its id.")
+             "Creating new class instances and print its id.")
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("help create"))
             self.assertEqual(h, output.getvalue().strip())
@@ -73,21 +73,21 @@ class TestHBNBCommand_help(unittest.TestCase):
     def test_help_all(self):
         h = ("Usage: all or all <class> or <class>.all()\n        "
              "Displayying the string rep of all instances of a given class"
-             ".\n        If no class is specified, displays all instantiated "
+             ".\n        If there's no class specified, it displays all instantiated "
              "objects.")
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("help all"))
             self.assertEqual(h, output.getvalue().strip())
 
     def test_help_count(self):
-        h = ("Usage: count <class> or <class>.count()\n        "
+        h = ("Usage: counting <class> or <class>.count()\n        "
              "Retrieving number of instances of a given class.")
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("help count"))
             self.assertEqual(h, output.getvalue().strip())
 
     def test_help_update(self):
-        h = ("Usage: update <class> <id> <attribute_name> <attribute_value> or"
+        h = ("Usage: updating <class> <id> <attribute_name> <attribute_value> or"
              "\n       <class>.update(<id>, <attribute_name>, <attribute_value"
              ">) or\n       <class>.update(<id>, <dictionary>)\n        "
              "Updating a class instance of a given id by adding or updating\n   "
